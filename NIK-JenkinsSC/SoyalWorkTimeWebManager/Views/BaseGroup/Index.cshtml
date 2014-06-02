@@ -1,0 +1,73 @@
+﻿@using SoyalWorkTimeWebManager.Models.Helpers
+@model IEnumerable<WorkTimeModel.PersonGroup>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Groups</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@{
+    var grid = new WebGrid(
+        Model, rowsPerPage: 15,
+        defaultSort: "Name",
+        columnNames: new[] { "Name", "ID" }
+        );
+}
+
+@grid.GetHtml(
+    tableStyle: "bordered",
+    headerStyle: "bordered-th",
+    footerStyle: "bordered-th",
+    alternatingRowStyle: "bordered-tr-hover",
+rowStyle: "",
+fillEmptyRows: false,
+mode: WebGridPagerModes.All,
+columns: grid.Columns
+ (
+     grid.Column("ID", header: "ID"),
+     grid.Column("Name", header: "Name"), 
+     grid.Column("", format: @<text>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Details", "Details", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Delete", "Delete", new { id = item.ID })</text>),
+grid.Column("", format: @<text>@Html.ActionLink("Send all member to readers", "SendToReader", new { id = item.ID })</text>)
+                  )
+                  )
+
+
+
+@*<script type="text/javascript">
+
+    function updateMonitor(taskId, status) {
+        $("#" + taskId).html("Task [" + taskId + "]: " + status);
+    }
+
+    $(function () {
+        $("#start").click(function (e) {
+            e.preventDefault();
+            $.post("Home/Start", {}, function (taskId) {
+
+                // Init monitors
+                $("#monitors").append($("<p id='" + taskId + "'/>"));
+                updateMonitor(taskId, "Started");
+
+                // Periodically update monitors
+                var intervalId = setInterval(function () {
+                    $.post("Home/Progress", { id: taskId }, function (progress) {
+                        if (progress >= 100) {
+                            updateMonitor(taskId, "Completed");
+                            clearInterval(intervalId);
+                        } else {
+                            updateMonitor(taskId, progress + "%");
+                        }
+                    });
+                }, 100);
+            });
+        });
+    });
+</script>
+
+<div id="monitors"></div>*@

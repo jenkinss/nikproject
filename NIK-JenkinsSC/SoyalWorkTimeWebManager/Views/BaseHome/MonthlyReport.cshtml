@@ -1,0 +1,80 @@
+﻿@model SoyalWorkTimeWebManager.ViewModels.MoveReportViewModel
+
+@{
+    ViewBag.Title = "title";
+    //Layout = "Index.cshtml";
+}
+@using (Html.BeginForm("MonthlyReport", "BeregHome"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <h2>Report</h2>
+    <div class="editor-label">
+        Employee
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("id", ViewBag.PersonList as SelectList, String.Empty)
+    </div>
+    <div class="editor-label">
+        Start Date
+    </div>
+    <div class="editor-field">
+        <input type="text" id="reportStartDate" name="reportStartDate" />
+    </div>
+    <div class="editor-label">
+        End Date
+    </div>
+    <div class="editor-field">
+        <input type="text" id="reportEndDate" name="reportEndDate" />
+    </div>
+    <input type="submit" value="Start" />
+    }
+
+@if (Model != null)
+{
+    string data = Model.Name + ";\n" + Model.Birth + ";\n";
+    <div id="accordion">
+
+        <h6>@Model.Name (@Model.Birth)</h6>
+        <div>
+            <table>
+                @foreach (KeyValuePair<string, List<string>> item in Model.MoveDictionary)
+                {
+                    <tr>
+                        <td>
+                            @item.Key
+                            @if (Model != null) { data += item.Key + ";"; }
+                        </td>
+                        @foreach (string movement in item.Value)
+                        {
+                            <td>
+                                @movement
+                                @{ data += movement + ";"; }
+                            </td>
+                        }
+                        @{ data += ";\n"; }
+                    </tr>
+                }
+            </table>
+            @using (Html.BeginForm("ExportCSV", "BeregHome")) {
+                <input type="hidden" name="csvdata" value="@data"/>
+                <input type="submit" value="Export"/>
+            }
+
+        </div>
+    </div>
+}
+    <script>
+        $(function () {
+            $("#reportStartDate").datepicker();
+            $("#reportEndDate").datepicker();
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#accordion").accordion();
+        });
+    </script>
+    

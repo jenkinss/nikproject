@@ -1,0 +1,150 @@
+﻿@model IEnumerable<WorkTimeModel.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>People</h2>
+@{
+    if (ViewBag.ReaderMessage != null)
+    {
+        <script type="text/javascript">
+            alert("@ViewBag.ReaderMessage");
+        </script>
+    }
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@{
+    var grid = new WebGrid(
+        Model, rowsPerPage: 15,
+        defaultSort: "Name",
+        columnNames: new[] { "Name", "NameUA", "CardBoardNumber", "ProfessionalClass", "Post", "Card", "PersonGroups", "ID" }
+        );
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Name</a></li>
+        <li><a href="#tabs-2">Cardboard number</a></li>
+        <li><a href="#tabs-3">Profession</a></li>
+        <li><a href="#tabs-4">Card Codes</a></li>
+        <li><a href="#tabs-5">Groups</a></li>
+    </ul>
+    <div id="tabs-1">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="personName" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-2">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="cardBoardNumber" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-3">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="professionalClass" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-4">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="cardCode" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-5">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="group" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+@grid.GetHtml(
+    tableStyle: "bordered",
+    headerStyle: "bordered-th",
+    footerStyle: "bordered-th",
+    alternatingRowStyle: "bordered-tr-hover",
+rowStyle: "",
+fillEmptyRows: false,
+mode: WebGridPagerModes.All,
+columns: grid.Columns
+ (
+     grid.Column("ID", header: "ID"),
+                 grid.Column("Name", header: "Name"),
+             grid.Column("NameUA", header: "Name in ukrain"),
+                 grid.Column("CardBoardNumber", header: "Cardboard number"),
+                 grid.Column("ProfessionalClass", header: "Professional class"),
+                 grid.Column("Post", header: "Post"),
+     grid.Column("Card Code", format: (item) =>
+     {
+         string result = "";
+         if (item.Card != null)
+         {
+             result += item.Card.SiteCode + ":" + item.Card.Code;
+         }
+         return result;
+
+
+     }),
+                                     grid.Column("PersonGroups", format: (item) =>
+                                     {
+                                         string result = "";
+                                         if (item.PersonGroups != null)
+                                         {
+                                             foreach (var gr in item.PersonGroups)
+                                             {
+                                                 result += gr.Name + "\n";
+                                             }
+                                         }
+                                         return result;
+                                     }),
+     grid.Column("", format: @<text>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Details", "Details", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Delete", "Delete", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Download to reader", "SendToReader", new { id = item.ID })</text>)
+                  )
+                  )
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>

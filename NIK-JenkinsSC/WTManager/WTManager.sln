@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTimeModel", "..\WorkTimeModel\WorkTimeModel.csproj", "{FE462552-3411-4990-8EED-985CB7EA4418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoyalWorkTimeWebManager", "..\SoyalWorkTimeWebManager\SoyalWorkTimeWebManager.csproj", "{BF605FF8-D18A-42D4-B64C-69981DBE07C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoyalEventServer", "..\SoyalEventServer\SoyalEventServer.csproj", "{FAE05226-53EC-41FE-945C-4DC9C7A3916B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://attilanedbal.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\WorkTimeModel\\WorkTimeModel.csproj
+		SccProjectName1 = ../WorkTimeModel
+		SccLocalPath1 = ..\\WorkTimeModel
+		SccProjectUniqueName2 = ..\\SoyalWorkTimeWebManager\\SoyalWorkTimeWebManager.csproj
+		SccProjectName2 = ../SoyalWorkTimeWebManager
+		SccLocalPath2 = ..\\SoyalWorkTimeWebManager
+		SccProjectUniqueName3 = ..\\SoyalEventServer\\SoyalEventServer.csproj
+		SccProjectName3 = ../SoyalEventServer
+		SccLocalPath3 = ..\\SoyalEventServer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE462552-3411-4990-8EED-985CB7EA4418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE462552-3411-4990-8EED-985CB7EA4418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE462552-3411-4990-8EED-985CB7EA4418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE462552-3411-4990-8EED-985CB7EA4418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF605FF8-D18A-42D4-B64C-69981DBE07C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF605FF8-D18A-42D4-B64C-69981DBE07C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF605FF8-D18A-42D4-B64C-69981DBE07C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF605FF8-D18A-42D4-B64C-69981DBE07C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,157 @@
+﻿@using SoyalWorkTimeWebManager.Models.Helpers
+@model IEnumerable<WorkTimeModel.WTCard>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cards</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Card Code</a></li>
+        <li><a href="#tabs-2">User Address</a></li>
+        <li><a href="#tabs-3">ID</a></li>
+    </ul>
+    <div id="tabs-1">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="cardCode" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-2">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="userAddress" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-3">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="cardID" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+</div>
+
+
+
+@{
+    var grid = new WebGrid(
+        Model, rowsPerPage: 10,
+        defaultSort: "SiteCode",
+        columnNames: new[] {"Card Code", "AntiPassBack", "UserAddress", "ID"}
+        );
+}
+
+@grid.GetHtml(
+    tableStyle: "bordered",
+    headerStyle: "bordered-th",
+    footerStyle: "bordered-th",
+    alternatingRowStyle: "bordered-tr-hover",
+rowStyle:"",
+fillEmptyRows:false,
+mode:WebGridPagerModes.All,
+columns:grid.Columns
+(
+    grid.Column("ID", header: "ID"),
+         grid.Column("Card Code", format: (item) => item.SiteCode + ":" + item.Code, header: "Card Code " + Helpers.SortDirection(null, ref grid, "SiteCode")),
+     grid.Column("AntiPassBack", header: "Antipass back " + Helpers.SortDirection(null, ref grid, "AntiPassBack")),
+     grid.Column("UserAddress", header: "User Address " + Helpers.SortDirection(null, ref grid, "UserAddress")),
+     grid.Column("", format: @<text>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Details", "Details", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Delete", "Delete", new { id = item.ID })</text>)
+)
+
+)
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+@*<table class="bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AntiPassBack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeZone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AntiPassBack)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeZone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>*@

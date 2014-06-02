@@ -1,0 +1,50 @@
+﻿@model WorkTimeModel.WorkTimeEvent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>WorkTimeEvent</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeStamp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeStamp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Site.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Site.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Person.NameUa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.NameUa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Direction)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Direction)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EventType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EventType)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

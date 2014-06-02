@@ -1,0 +1,71 @@
+﻿@model WorkTimeModel.WTCard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>WTCard</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AntiPassBack)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AntiPassBack)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiteCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiteCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeZone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeZone)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

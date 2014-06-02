@@ -1,0 +1,128 @@
+﻿@using System.Diagnostics
+@using SoyalWorkTimeWebManager.Models.Helpers
+@model SoyalWorkTimeWebManager.ViewModels.RiportViewModel
+@{
+   
+}
+
+<table class="bordered">
+    @*első sor - fejléc*@
+    <tr>
+        <th>
+            Прізвище, імя та побатькові
+        </th>
+        <th>
+            Таб. №
+        </th>
+        <th>
+            Посада
+        </th>
+        
+        @{
+            WorkTimeRiport first = Model.WorkTimeRiports.FirstOrDefault();
+        }
+        
+        @{
+            Debug.Assert(first != null, "first != null");
+        }
+        
+
+        @foreach (var item in first.HourOfDays)
+            {
+                <th>
+                    @item.Date
+                </th>        
+            }
+        <th class="table-header-rotated">
+            факт. роботи
+        </th>
+        <th></th>
+        <th class="table-header-rotated">
+            чергові відпустки
+        </th>
+        <th>
+            відпуск у звязку з род.
+        </th>
+        <th>
+            хвороба
+        </th>
+        <th>
+            з дозволу адміністрації
+        </th>
+        <th>
+            прогули
+        </th>
+        <th>
+            Вихідні і святкові дні
+        </th>
+        <th>
+            Всьогоднів явок і неявок
+        </th>
+        <th>
+            Відпрцьовані години
+        </th>
+        <th>
+            Зарпплата
+        </th>
+    </tr>
+    @*--------------------------*@
+    
+    @foreach (var currentRiport in Model.WorkTimeRiports)
+{
+    <tr>
+        <td>
+            @currentRiport.NameUa
+        </td>
+        <td>
+            @currentRiport.CardBoardNumber
+        </td>
+        <td>
+            @currentRiport.Post
+        </td>
+        @if (currentRiport.HourOfDays.Count!=0)
+        {
+            foreach (var d in currentRiport.HourOfDays)
+            {
+
+                if (d.Absence == "")
+                {
+                    <td>
+                        @d.Hour
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @d.Absence
+                    </td>
+                }
+            }
+        }
+        else
+        {
+            <td>
+                п
+            </td>
+        }
+            
+        <td>@currentRiport.WorkDays</td>        
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            @currentRiport.FreeDays
+        </td>
+        <td>
+            @currentRiport.DaysInMonth
+        </td>
+        <td>
+            @currentRiport.WorkHours
+        </td>
+        <td></td>
+    </tr>
+}
+    
+</table>

@@ -1,0 +1,54 @@
+﻿@using WorkTimeModel
+@model IEnumerable<WorkTimeModel.FacilityLocation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="bordered">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Address)*@
+            Address
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            Location Name
+        </th>
+        <th>
+            Location Sites
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @{
+                    foreach (var site in item.Sites)
+                    {
+                        @site.Name<br/>
+                    }   
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

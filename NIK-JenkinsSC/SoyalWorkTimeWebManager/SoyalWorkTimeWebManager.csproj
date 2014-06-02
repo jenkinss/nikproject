@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF605FF8-D18A-42D4-B64C-69981DBE07C4}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoyalWorkTimeWebManager</RootNamespace>
+    <AssemblyName>SoyalWorkTimeWebManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SoyalBISAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\SoyalBISAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseCardController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseEventController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseGroupController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseHomeController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseLocationController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseNodeController.cs" />
+    <Compile Include="Controllers\BaseControllers\BasePersonController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseSiteController.cs" />
+    <Compile Include="Controllers\BaseControllers\BaseTableController.cs" />
+    <Compile Include="Controllers\Begany\BeganyCardController.cs" />
+    <Compile Include="Controllers\Begany\BeganyEventController.cs" />
+    <Compile Include="Controllers\Begany\BeganyGroupController.cs" />
+    <Compile Include="Controllers\Begany\BeganyHomeController.cs" />
+    <Compile Include="Controllers\Begany\BeganyLocationController.cs" />
+    <Compile Include="Controllers\Begany\BeganyNodeController.cs" />
+    <Compile Include="Controllers\Begany\BeganyPersonController.cs" />
+    <Compile Include="Controllers\Begany\BeganySiteController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoCardController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoEventController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoGroupController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoHomeController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoLocationController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoNodeController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoPersonController.cs" />
+    <Compile Include="Controllers\Beregovo\BeregovoSiteController.cs" />
+    <Compile Include="Controllers\Bereg\BeregCardController.cs" />
+    <Compile Include="Controllers\Bereg\BeregEventController.cs" />
+    <Compile Include="Controllers\Bereg\BeregGroupController.cs" />
+    <Compile Include="Controllers\Bereg\BeregHomeController.cs" />
+    <Compile Include="Controllers\Bereg\BeregLocationController.cs" />
+    <Compile Include="Controllers\Bereg\BeregNodeController.cs" />
+    <Compile Include="Controllers\Bereg\BeregPersonController.cs" />
+    <Compile Include="Controllers\Bereg\BeregSiteController.cs" />
+    <Compile Include="Controllers\Bereg\BeregTableController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\EFRepository.cs" />
+    <Compile Include="DAL\EFUnitOfWork.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404070934070_InitialCreate.cs" />
+    <Compile Include="Migrations\201404070934070_InitialCreate.Designer.cs">
+      <DependentUpon>201404070934070_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404071431027_nogroupreq.cs" />
+    <Compile Include="Migrations\201404071431027_nogroupreq.Designer.cs">
+      <DependentUpon>201404071431027_nogroupreq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404071814251_fixLogevent.cs" />
+    <Compile Include="Migrations\201404071814251_fixLogevent.Designer.cs">
+      <DependentUpon>201404071814251_fixLogevent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404090835587_AddIsDeletedColumn.cs" />
+    <Compile Include="Migrations\201404090835587_AddIsDeletedColumn.Designer.cs">
+      <DependentUpon>201404090835587_AddIsDeletedColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404091004292_AddWTEventTypeTable.cs" />
+    <Compile Include="Migrations\201404091004292_AddWTEventTypeTable.Designer.cs">
+      <DependentUpon>201404091004292_AddWTEventTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Helpers\CardSender.cs" />
+    <Compile Include="Models\Helpers\FormDateConverter.cs" />
+    <Compile Include="Models\Helpers\Helpers.cs" />
+    <Compile Include="Models\Helpers\WorkTimeCounter.cs" />
+    <Compile Include="Models\Helpers\WorkTimeRiport.cs" />
+    <Compile Include="Models\LacoationContexts\BeregovoContext.cs" />
+    <Compile Include="Models\LacoationContexts\BeganyContext.cs" />
+    <Compile Include="Models\LacoationContexts\HOHContext.cs" />
+    <Compile Include="Models\WorkTimeManagerContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Assignments\AssignAccesMode.cs" />
+    <Compile Include="ViewModels\Assignments\AssignedGroups.cs" />
+    <Compile Include="ViewModels\Assignments\AssignedLocations.cs" />
+    <Compile Include="ViewModels\Assignments\AssignedSites.cs" />
+    <Compile Include="ViewModels\Helpers\AccessConverter.cs" />
+    <Compile Include="ViewModels\Helpers\AssignCSVData.cs" />
+    <Compile Include="ViewModels\MoveReportViewModel.cs" />
+    <Compile Include="ViewModels\RiportViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <None Include="DLL\SoyalBISAPI.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\BaseCard\Create.cshtml" />
+    <Content Include="Views\BaseCard\Delete.cshtml" />
+    <Content Include="Views\BaseCard\Details.cshtml" />
+    <Content Include="Views\BaseCard\Edit.cshtml" />
+    <Content Include="Views\BaseCard\Index.cshtml" />
+    <Content Include="Views\BaseEvent\Create.cshtml" />
+    <Content Include="Views\BaseEvent\Delete.cshtml" />
+    <Content Include="Views\BaseEvent\Details.cshtml" />
+    <Content Include="Views\BaseEvent\Edit.cshtml" />
+    <Content Include="Views\BaseEvent\Index.cshtml" />
+    <Content Include="Views\BaseGroup\Create.cshtml" />
+    <Content Include="Views\BaseGroup\Delete.cshtml" />
+    <Content Include="Views\BaseGroup\Details.cshtml" />
+    <Content Include="Views\BaseGroup\Edit.cshtml" />
+    <Content Include="Views\BaseGroup\Index.cshtml" />
+    <Content Include="Views\BaseHome\Admin.cshtml" />
+    <Content Include="Views\BaseHome\BeregovoIndex.cshtml" />
+    <Content Include="Views\BaseHome\MonthlyReport.cshtml" />
+    <Content Include="Views\BaseLocation\Create.cshtml" />
+    <Content Include="Views\BaseLocation\Delete.cshtml" />
+    <Content Include="Views\BaseLocation\Details.cshtml" />
+    <Content Include="Views\BaseLocation\Edit.cshtml" />
+    <Content Include="Views\BaseLocation\Index.cshtml" />
+    <Content Include="Views\BaseNode\Create.cshtml" />
+    <Content Include="Views\BaseNode\Delete.cshtml" />
+    <Content Include="Views\BaseNode\Details.cshtml" />
+    <Content Include="Views\BaseNode\Edit.cshtml" />
+    <Content Include="Views\BaseNode\Index.cshtml" />
+    <Content Include="Views\BasePerson\Create.cshtml" />
+    <Content Include="Views\BasePerson\Delete.cshtml" />
+    <Content Include="Views\BasePerson\Details.cshtml" />
+    <Content Include="Views\BasePerson\Edit.cshtml" />
+    <Content Include="Views\BasePerson\Index.cshtml" />
+    <Content Include="Views\BaseSite\Index.cshtml" />
+    <Content Include="Views\BaseSite\Create.cshtml" />
+    <Content Include="Views\BaseSite\Delete.cshtml" />
+    <Content Include="Views\BaseSite\Details.cshtml" />
+    <Content Include="Views\BaseSite\Edit.cshtml" />
+    <Content Include="Views\BeregHome\Index.cshtml" />
+    <Content Include="Views\BeregHome\MonthlyReport.cshtml" />
+    <Content Include="Views\BeregovoCard\Create.cshtml" />
+    <Content Include="Views\BeregovoCard\Delete.cshtml" />
+    <Content Include="Views\BeregovoCard\Details.cshtml" />
+    <Content Include="Views\BeregovoCard\Edit.cshtml" />
+    <Content Include="Views\BeregovoCard\Index.cshtml" />
+    <Content Include="Views\BeregovoEvent\Create.cshtml" />
+    <Content Include="Views\BeregovoEvent\Delete.cshtml" />
+    <Content Include="Views\BeregovoEvent\Details.cshtml" />
+    <Content Include="Views\BeregovoEvent\Edit.cshtml" />
+    <Content Include="Views\BeregovoEvent\Index.cshtml" />
+    <Content Include="Views\BeregovoGroup\Create.cshtml" />
+    <Content Include="Views\BeregovoGroup\Delete.cshtml" />
+    <Content Include="Views\BeregovoGroup\Details.cshtml" />
+    <Content Include="Views\BeregovoGroup\Edit.cshtml" />
+    <Content Include="Views\BeregovoGroup\Index.cshtml" />
+    <Content Include="Views\BeregovoHome\Index.cshtml" />
+    <Content Include="Views\BeregovoHome\MonthlyReport.cshtml" />
+    <Content Include="Views\BeregovoLocation\Create.cshtml" />
+    <Content Include="Views\BeregovoLocation\Delete.cshtml" />
+    <Content Include="Views\BeregovoLocation\Details.cshtml" />
+    <Content Include="Views\BeregovoLocation\Edit.cshtml" />
+    <Content Include="Views\BeregovoLocation\Index.cshtml" />
+    <Content Include="Views\BeregovoNode\Create.cshtml" />
+    <Content Include="Views\BeregovoNode\Delete.cshtml" />
+    <Content Include="Views\BeregovoNode\Details.cshtml" />
+    <Content Include="Views\BeregovoNode\Edit.cshtml" />
+    <Content Include="Views\BeregovoNode\Index.cshtml" />
+    <Content Include="Views\BeregovoPerson\Create.cshtml" />
+    <Content Include="Views\BeregovoPerson\Delete.cshtml" />
+    <Content Include="Views\BeregovoPerson\Details.cshtml" />
+    <Content Include="Views\BeregovoPerson\Edit.cshtml" />
+    <Content Include="Views\BeregovoPerson\Index.cshtml" />
+    <Content Include="Views\BeregovoSite\Create.cshtml" />
+    <Content Include="Views\BeregovoSite\Delete.cshtml" />
+    <Content Include="Views\BeregovoSite\Details.cshtml" />
+    <Content Include="Views\BeregovoSite\Edit.cshtml" />
+    <Content Include="Views\BeregovoSite\Index.cshtml" />
+    <Content Include="Views\BaseHome\BeregIndex.cshtml" />
+    <Content Include="Views\BaseHome\BeganyIndex.cshtml" />
+    <Content Include="Views\BeregCard\Create.cshtml" />
+    <Content Include="Views\BeregCard\Delete.cshtml" />
+    <Content Include="Views\BeregCard\Details.cshtml" />
+    <Content Include="Views\BeregCard\Edit.cshtml" />
+    <Content Include="Views\BeregCard\Index.cshtml" />
+    <Content Include="Views\BeregEvent\Create.cshtml" />
+    <Content Include="Views\BeregEvent\Delete.cshtml" />
+    <Content Include="Views\BeregEvent\Details.cshtml" />
+    <Content Include="Views\BeregEvent\Edit.cshtml" />
+    <Content Include="Views\BeregEvent\Index.cshtml" />
+    <Content Include="Views\BeregGroup\Create.cshtml" />
+    <Content Include="Views\BeregGroup\Delete.cshtml" />
+    <Content Include="Views\BeregGroup\Details.cshtml" />
+    <Content Include="Views\BeregGroup\Edit.cshtml" />
+    <Content Include="Views\BeregGroup\Index.cshtml" />
+    <Content Include="Views\BeregLocation\Create.cshtml" />
+    <Content Include="Views\BeregLocation\Delete.cshtml" />
+    <Content Include="Views\BeregLocation\Details.cshtml" />
+    <Content Include="Views\BeregLocation\Edit.cshtml" />
+    <Content Include="Views\BeregLocation\Index.cshtml" />
+    <Content Include="Views\BeregNode\Create.cshtml" />
+    <Content Include="Views\BeregNode\Delete.cshtml" />
+    <Content Include="Views\BeregNode\Details.cshtml" />
+    <Content Include="Views\BeregNode\Edit.cshtml" />
+    <Content Include="Views\BeregNode\Index.cshtml" />
+    <Content Include="Views\BeregPerson\Create.cshtml" />
+    <Content Include="Views\BeregPerson\Delete.cshtml" />
+    <Content Include="Views\BeregPerson\Details.cshtml" />
+    <Content Include="Views\BeregPerson\Edit.cshtml" />
+    <Content Include="Views\BeregPerson\Index.cshtml" />
+    <Content Include="Views\BeregSite\Create.cshtml" />
+    <Content Include="Views\BeregSite\Delete.cshtml" />
+    <Content Include="Views\BeregSite\Details.cshtml" />
+    <Content Include="Views\BeregSite\Edit.cshtml" />
+    <Content Include="Views\BeregSite\Index.cshtml" />
+    <Content Include="Views\BaseHome\Index.cshtml" />
+    <Content Include="Views\BeganyCard\Create.cshtml" />
+    <Content Include="Views\BeganyCard\Delete.cshtml" />
+    <Content Include="Views\BeganyCard\Details.cshtml" />
+    <Content Include="Views\BeganyCard\Edit.cshtml" />
+    <Content Include="Views\BeganyCard\Index.cshtml" />
+    <Content Include="Views\BeganyEvent\Create.cshtml" />
+    <Content Include="Views\BeganyEvent\Delete.cshtml" />
+    <Content Include="Views\BeganyEvent\Details.cshtml" />
+    <Content Include="Views\BeganyEvent\Edit.cshtml" />
+    <Content Include="Views\BeganyEvent\Index.cshtml" />
+    <Content Include="Views\BeganyGroup\Create.cshtml" />
+    <Content Include="Views\BeganyGroup\Delete.cshtml" />
+    <Content Include="Views\BeganyGroup\Details.cshtml" />
+    <Content Include="Views\BeganyGroup\Edit.cshtml" />
+    <Content Include="Views\BeganyGroup\Index.cshtml" />
+    <Content Include="Views\BeganyHome\Index.cshtml" />
+    <Content Include="Views\BeganyHome\MonthlyReport.cshtml" />
+    <Content Include="Views\BeganyLocation\Create.cshtml" />
+    <Content Include="Views\BeganyLocation\Delete.cshtml" />
+    <Content Include="Views\BeganyLocation\Details.cshtml" />
+    <Content Include="Views\BeganyLocation\Edit.cshtml" />
+    <Content Include="Views\BeganyLocation\Index.cshtml" />
+    <Content Include="Views\BeganyNode\Create.cshtml" />
+    <Content Include="Views\BeganyNode\Delete.cshtml" />
+    <Content Include="Views\BeganyNode\Details.cshtml" />
+    <Content Include="Views\BeganyNode\Edit.cshtml" />
+    <Content Include="Views\BeganyNode\Index.cshtml" />
+    <Content Include="Views\BeganyPerson\Create.cshtml" />
+    <Content Include="Views\BeganyPerson\Delete.cshtml" />
+    <Content Include="Views\BeganyPerson\Details.cshtml" />
+    <Content Include="Views\BeganyPerson\Edit.cshtml" />
+    <Content Include="Views\BeganyPerson\Index.cshtml" />
+    <Content Include="Views\BeganySite\Create.cshtml" />
+    <Content Include="Views\BeganySite\Delete.cshtml" />
+    <Content Include="Views\BeganySite\Details.cshtml" />
+    <Content Include="Views\BeganySite\Edit.cshtml" />
+    <Content Include="Views\BeganySite\Index.cshtml" />
+    <Content Include="Views\BaseTable\Index.cshtml" />
+    <Content Include="Views\BaseTable\Riport.cshtml" />
+    <Content Include="Views\BeregTable\Riport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoyalAR721API\SoyalAR721API.csproj">
+      <Project>{672cc6f0-6893-4033-8912-45bd43753ccd}</Project>
+      <Name>SoyalAR721API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkTimeModel\WorkTimeModel.csproj">
+      <Project>{fe462552-3411-4990-8eed-985cb7ea4418}</Project>
+      <Name>WorkTimeModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404070934070_InitialCreate.resx">
+      <DependentUpon>201404070934070_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404071431027_nogroupreq.resx">
+      <DependentUpon>201404071431027_nogroupreq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404071814251_fixLogevent.resx">
+      <DependentUpon>201404071814251_fixLogevent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404090835587_AddIsDeletedColumn.resx">
+      <DependentUpon>201404090835587_AddIsDeletedColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404091004292_AddWTEventTypeTable.resx">
+      <DependentUpon>201404091004292_AddWTEventTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5042</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5042/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

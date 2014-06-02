@@ -1,0 +1,215 @@
+﻿@using SoyalWorkTimeWebManager.Models.Helpers
+@model IEnumerable<WorkTimeModel.WorkTimeEvent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Events</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Name</a></li>
+        <li><a href="#tabs-2">Date</a></li>
+        <li><a href="#tabs-3">Direction</a></li>
+        <li><a href="#tabs-4">Type</a></li>
+        <li><a href="#tabs-5">Time intervall</a></li>
+        <li><a href="#tabs-6">Person in time intervall</a></li>
+    </ul>
+    <div id="tabs-1">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="personName" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-2">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" id="selectedDate" name="selectedDate" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-3">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="selectedDirection" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-4">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-field">
+                <input type="text" name="selectedType" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-5">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-label">
+                Start Date
+            </div>
+            <div class="editor-field">
+                <input type="text" id="intervallStartDate" name="intervallSelectedStartDate" />
+            </div>
+            <div class="editor-label">
+                End Date
+            </div>
+            <div class="editor-field">
+                <input type="text" id="intervallEndDate" name="intervallSelectedEndDate" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+    <div id="tabs-6">
+        @using (Html.BeginForm("Index"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="editor-label">
+                Name
+            </div>
+            <div class="editor-field">
+                <input type="text" name="intervallPersonName" />
+            </div>
+            <div class="editor-label">
+                Start Date
+            </div>
+            <div class="editor-field">
+                <input type="text" id="personIntervallStartDate" name="personIntervallSelectedStartDate" />
+            </div>
+            <div class="editor-label">
+                End Date
+            </div>
+            <div class="editor-field">
+                <input type="text" id="personIntervallEndDate" name="personIntervallSelectedEndDate" />
+            </div>
+            <input type="submit" value="Start" />
+        }
+    </div>
+</div>
+
+
+
+
+
+
+@{
+    var grid = new WebGrid(
+        Model, rowsPerPage: 50,
+        //defaultSort: "TimeStamp",
+        columnNames: new[] { "TimeStamp", "Site", "Person", "Direction", "EventType", "ID" }
+        );
+}
+
+@grid.GetHtml(
+    tableStyle: "bordered",
+    headerStyle: "bordered-th",
+    footerStyle: "bordered-th",
+    alternatingRowStyle: "bordered-tr-hover",
+rowStyle: "",
+fillEmptyRows: false,
+mode: WebGridPagerModes.All,
+columns: grid.Columns
+ (
+             grid.Column("ID", header: "ID"),
+         grid.Column("TimeStamp", header: "TimeStamp"),
+         grid.Column("Site.Name", header: "Site"),
+         grid.Column("Person.Name", header: "Person"),
+         grid.Column("Direction", header: "Direction"),
+         grid.Column("EventType", header: "Event Type"),
+     grid.Column("", format: @<text>@Html.ActionLink("Edit", "Edit", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Details", "Details", new { id = item.ID })</text>),
+     grid.Column("", format: @<text>@Html.ActionLink("Delete", "Delete", new { id = item.ID })</text>)
+)  
+)
+
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Site.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.NameUa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Site.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.NameUa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>*@
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+<script>
+    $(function () {
+        $("#selectedDate").datepicker();
+        $("#personIntervallStartDate").datepicker();
+        $("#personIntervallEndDate").datepicker();
+        $("#intervallStartDate").datepicker();
+        $("#intervallEndDate").datepicker();
+    });
+</script>

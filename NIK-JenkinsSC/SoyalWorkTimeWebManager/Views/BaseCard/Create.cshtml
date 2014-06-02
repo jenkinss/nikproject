@@ -1,0 +1,97 @@
+﻿@model WorkTimeModel.WTCard
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>WTCard</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AntiPassBack)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AntiPassBack)
+            @Html.ValidationMessageFor(model => model.AntiPassBack)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserAddress)
+            @Html.ValidationMessageFor(model => model.UserAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SiteCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SiteCode)
+            @Html.ValidationMessageFor(model => model.SiteCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PinCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PinCode)
+            @Html.ValidationMessageFor(model => model.PinCode)
+        </div>
+
+        <div class="editor-label">
+            Acces Mode
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mode)
+            @Html.ValidationMessageFor(model => model.Mode)
+        </div>
+
+        @*<div class="editor-field">
+            @Html.EditorFor(model => model.Mode)
+            @Html.ValidationMessageFor(model => model.Mode)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TimeZone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TimeZone)
+            @Html.ValidationMessageFor(model => model.TimeZone)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

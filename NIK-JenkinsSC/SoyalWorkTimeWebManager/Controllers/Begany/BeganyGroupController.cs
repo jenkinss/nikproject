@@ -1,0 +1,12 @@
+﻿using System.Web.Mvc;
+using SoyalWorkTimeWebManager.Controllers.BaseControllers;
+using SoyalWorkTimeWebManager.Models.LacoationContexts;
+
+namespace SoyalWorkTimeWebManager.Controllers.Begany
+{
+    [Authorize(Roles = "BeganyGroupAdmin")]
+    public class BeganyGroupController : BaseGroupController<BeganyContext>
+    {
+        
+    }
+}
