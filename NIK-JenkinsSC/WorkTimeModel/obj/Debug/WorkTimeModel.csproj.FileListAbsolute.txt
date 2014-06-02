@@ -1,0 +1,7 @@
+C:\VS_workspace\Result\WorkTimeModel.dll
+C:\VS_workspace\Result\WorkTimeModel.pdb
+C:\VS_workspace\WorkTimeModel\obj\Debug\WorkTimeModel.csprojResolveAssemblyReference.cache
+C:\VS_workspace\WorkTimeModel\obj\Debug\WorkTimeModel.dll
+C:\VS_workspace\WorkTimeModel\obj\Debug\WorkTimeModel.pdb
+C:\VS_workspace\WorkTimeModel\bin\Debug\WorkTimeModel.dll
+C:\VS_workspace\WorkTimeModel\bin\Debug\WorkTimeModel.pdb

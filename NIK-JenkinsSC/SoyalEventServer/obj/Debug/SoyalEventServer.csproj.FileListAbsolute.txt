@@ -1,0 +1,10 @@
+C:\VS_workspace\Result\DLL\SoyalBISAPI.dll
+C:\VS_workspace\Result\SoyalEventServer.exe.config
+C:\VS_workspace\Result\SoyalEventServer.exe
+C:\VS_workspace\Result\SoyalEventServer.pdb
+C:\VS_workspace\SoyalEventServer\obj\Debug\SoyalEventServer.csprojResolveAssemblyReference.cache
+C:\VS_workspace\SoyalEventServer\obj\Debug\SoyalEventServer.Form1.resources
+C:\VS_workspace\SoyalEventServer\obj\Debug\SoyalEventServer.Properties.Resources.resources
+C:\VS_workspace\SoyalEventServer\obj\Debug\SoyalEventServer.csproj.GenerateResource.Cache
+C:\VS_workspace\SoyalEventServer\obj\Debug\SoyalEventServer.exe
+C:\VS_workspace\SoyalEventServer\obj\Debug\SoyalEventServer.pdb
