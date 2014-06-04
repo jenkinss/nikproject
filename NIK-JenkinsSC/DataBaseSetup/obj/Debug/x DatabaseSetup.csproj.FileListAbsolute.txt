@@ -1,0 +1,5 @@
+C:\VS_workspace\WTManager\A\bin\Debug\DatabaseSetup.exe
+C:\VS_workspace\WTManager\A\bin\Debug\DatabaseSetup.pdb
+C:\VS_workspace\WTManager\A\obj\Debug\DatabaseSetup.exe
+C:\VS_workspace\WTManager\A\obj\Debug\DatabaseSetup.pdb
+C:\VS_workspace\WTManager\A\bin\Debug\commandfile.sql
