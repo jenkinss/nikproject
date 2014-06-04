@@ -1,5 +1,0 @@
-C:\Git_workspace\nikproject\NIK-JenkinsSC\DataBaseSetup\bin\Debug\commandfile.sql
-C:\Git_workspace\nikproject\NIK-JenkinsSC\DataBaseSetup\bin\Debug\DatabaseSetup.exe
-C:\Git_workspace\nikproject\NIK-JenkinsSC\DataBaseSetup\bin\Debug\DatabaseSetup.pdb
-C:\Git_workspace\nikproject\NIK-JenkinsSC\DataBaseSetup\obj\Debug\DatabaseSetup.exe
-C:\Git_workspace\nikproject\NIK-JenkinsSC\DataBaseSetup\obj\Debug\DatabaseSetup.pdb

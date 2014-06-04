@@ -21,7 +21,7 @@ namespace SoyalWorkTimeTests
         {
 
             //Webserver initialize
-            int portnumber = 5042;
+            int portnumber = 80;
             WebServerSetup.sitePath = Environment.GetEnvironmentVariable("soyalpublishfolder");
             WebServerSetup.portNumber = portnumber;
             WebServerSetup.StartIIS();
