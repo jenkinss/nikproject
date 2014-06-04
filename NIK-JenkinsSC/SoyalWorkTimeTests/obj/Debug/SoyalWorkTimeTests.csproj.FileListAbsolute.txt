@@ -9,3 +9,14 @@ C:\VS_workspace\WTManager\SoyalWorkTimeTests\bin\Debug\WebDriver.Support.xml
 C:\VS_workspace\WTManager\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.csprojResolveAssemblyReference.cache
 C:\VS_workspace\WTManager\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.dll
 C:\VS_workspace\WTManager\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.pdb
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\SoyalWorkTimeTests.dll
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\SoyalWorkTimeTests.pdb
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\nunit.framework.dll
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver.dll
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver.Support.dll
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\nunit.framework.xml
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver.xml
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver.Support.xml
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.csprojResolveAssemblyReference.cache
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.dll
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.pdb

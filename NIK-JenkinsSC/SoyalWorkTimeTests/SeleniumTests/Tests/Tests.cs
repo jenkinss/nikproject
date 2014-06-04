@@ -10,6 +10,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using SoyalWorkTimeTests.SeleniumTests.Models;
+using System.Threading;
 
 namespace SoyalWorkTimeTests
 {
@@ -28,6 +29,8 @@ namespace SoyalWorkTimeTests
                 Loginpage page = new Loginpage();
                 page.usernamelement.Clear();
                 page.usernamelement.SendKeys("root");
+
+                Thread.Sleep(10000);
 
                 page.passwordelement.Clear();
                 page.passwordelement.SendKeys("123456");
