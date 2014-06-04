@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTimeModel", "..\WorkTimeModel\WorkTimeModel.csproj", "{FE462552-3411-4990-8EED-985CB7EA4418}"
 EndProject
@@ -9,9 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoyalWorkTimeWebManager", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoyalEventServer", "..\SoyalEventServer\SoyalEventServer.csproj", "{FAE05226-53EC-41FE-945C-4DC9C7A3916B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoyalWorkTimeTests", "..\SoyalWorkTimeTests\SoyalWorkTimeTests.csproj", "{CDF5242A-8257-41DD-8FAC-58C7EF15DB12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2A6882A5-03E6-4306-9485-4D89F82B04C3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSetup", "..\DataBaseSetup\DatabaseSetup.csproj", "{E7FC4EF0-5CD3-4333-BE0F-434C78A786BC}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://attilanedbal.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
@@ -24,6 +33,12 @@ Global
 		SccProjectUniqueName3 = ..\\SoyalEventServer\\SoyalEventServer.csproj
 		SccProjectName3 = ../SoyalEventServer
 		SccLocalPath3 = ..\\SoyalEventServer
+		SccProjectUniqueName4 = ..\\SoyalWorkTimeTests\\SoyalWorkTimeTests.csproj
+		SccProjectName4 = ../SoyalWorkTimeTests
+		SccLocalPath4 = ..\\SoyalWorkTimeTests
+		SccProjectUniqueName5 = ..\\DataBaseSetup\\DatabaseSetup.csproj
+		SccProjectName5 = ../DataBaseSetup
+		SccLocalPath5 = ..\\DataBaseSetup
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +57,14 @@ Global
 		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAE05226-53EC-41FE-945C-4DC9C7A3916B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF5242A-8257-41DD-8FAC-58C7EF15DB12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF5242A-8257-41DD-8FAC-58C7EF15DB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF5242A-8257-41DD-8FAC-58C7EF15DB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF5242A-8257-41DD-8FAC-58C7EF15DB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FC4EF0-5CD3-4333-BE0F-434C78A786BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FC4EF0-5CD3-4333-BE0F-434C78A786BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FC4EF0-5CD3-4333-BE0F-434C78A786BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FC4EF0-5CD3-4333-BE0F-434C78A786BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
