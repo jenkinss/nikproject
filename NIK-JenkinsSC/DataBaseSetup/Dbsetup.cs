@@ -38,10 +38,10 @@ namespace SoyalWorkTimeDatabaseSetup
         
         private static void Setup()
         {
-            Console.WriteLine(executeCommand("sqllocaldb p " + Name));
-            Console.WriteLine(executeCommand("sqllocaldb d " + Name));
-            Console.WriteLine(executeCommand("sqllocaldb c " + Name));
-            Console.WriteLine(executeCommand("sqllocaldb s " + Name));
+            //Console.WriteLine(executeCommand("sqllocaldb p " + Name));
+            //Console.WriteLine(executeCommand("sqllocaldb d " + Name));
+            //Console.WriteLine(executeCommand("sqllocaldb c " + Name));
+            //Console.WriteLine(executeCommand("sqllocaldb s " + Name));
             
             Console.WriteLine("Start sleep");
             Console.WriteLine("-----");
