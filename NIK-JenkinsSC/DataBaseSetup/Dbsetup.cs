@@ -54,7 +54,7 @@ namespace SoyalWorkTimeDatabaseSetup
             Console.WriteLine(">>>>>>>>>>>>>> "+address);
             string importcommand = @"CREATE DATABASE [" + Name + @"] ON ( FILENAME = N'" + databasefile + ".mdf' ), ( FILENAME = N'" + databasefile + "_log.ldf' )  FOR ATTACH ;";
             Console.WriteLine(executeCommand("sqlcmd -S " + address + @" -i .\commandfile.sql"));
-            Replaceinfile(xmlfile, "SERVERADDRESS", address);
+            Replaceinfile(xmlfile, "np:\\.\pipe\LOCALDB#1F751387\tsql\query", address);
             Replaceinfile(xmlfile, "DATABASENAME", Name);
             Replaceinfile(xmlfile, "DefaultConnection", "OldConnection");
             Replaceinfile(xmlfile, "SecondConnection", "DefaultConnection");
