@@ -7,6 +7,5 @@ C:\VS_workspace\WorkTimeModel\bin\Debug\WorkTimeModel.dll
 C:\VS_workspace\WorkTimeModel\bin\Debug\WorkTimeModel.pdb
 C:\Git_workspace\nikproject\NIK-JenkinsSC\WorkTimeModel\bin\Debug\WorkTimeModel.dll
 C:\Git_workspace\nikproject\NIK-JenkinsSC\WorkTimeModel\bin\Debug\WorkTimeModel.pdb
-C:\Git_workspace\nikproject\NIK-JenkinsSC\WorkTimeModel\obj\Debug\WorkTimeModel.csprojResolveAssemblyReference.cache
 C:\Git_workspace\nikproject\NIK-JenkinsSC\WorkTimeModel\obj\Debug\WorkTimeModel.dll
 C:\Git_workspace\nikproject\NIK-JenkinsSC\WorkTimeModel\obj\Debug\WorkTimeModel.pdb

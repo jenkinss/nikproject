@@ -38,11 +38,11 @@ namespace SoyalWorkTimeDatabaseSetup
         
         private static void Setup()
         {
-            Console.WriteLine("Ez nem fut");
-            //Console.WriteLine(executeCommand("sqllocaldb p " + Name));
-            //Console.WriteLine(executeCommand("sqllocaldb d " + Name));
-            //Console.WriteLine(executeCommand("sqllocaldb c " + Name));
-            //Console.WriteLine(executeCommand("sqllocaldb s " + Name));
+            
+            Console.WriteLine(executeCommand("sqllocaldb p " + Name));
+            Console.WriteLine(executeCommand("sqllocaldb d " + Name));
+            Console.WriteLine(executeCommand("sqllocaldb c " + Name));
+            Console.WriteLine(executeCommand("sqllocaldb s " + Name));
             
             Console.WriteLine("Start sleep");
             Console.WriteLine("-----");
@@ -54,7 +54,7 @@ namespace SoyalWorkTimeDatabaseSetup
             Console.WriteLine(">>>>>>>>>>>>>> "+address);
             string importcommand = @"CREATE DATABASE [" + Name + @"] ON ( FILENAME = N'" + databasefile + ".mdf' ), ( FILENAME = N'" + databasefile + "_log.ldf' )  FOR ATTACH ;";
             Console.WriteLine(executeCommand("sqlcmd -S " + address + @" -i .\commandfile.sql"));
-            Replaceinfile(xmlfile, "np:\\.\pipe\LOCALDB#1F751387\tsql\query", address);
+            Replaceinfile(xmlfile, "SERVERADDRESS", address);
             Replaceinfile(xmlfile, "DATABASENAME", Name);
             Replaceinfile(xmlfile, "DefaultConnection", "OldConnection");
             Replaceinfile(xmlfile, "SecondConnection", "DefaultConnection");
