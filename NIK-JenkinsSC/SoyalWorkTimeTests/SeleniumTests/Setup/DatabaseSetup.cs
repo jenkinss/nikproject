@@ -15,6 +15,7 @@ namespace SoyalWorkTimeTests
 
         public static void Setup()
         {
+            Console.WriteLine("test db setup start");
             executeCommand("sqllocaldb p " + Name);
             executeCommand("sqllocaldb d " + Name);
             executeCommand("sqllocaldb c " + Name);
