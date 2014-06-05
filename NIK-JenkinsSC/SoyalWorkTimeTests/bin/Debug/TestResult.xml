@@ -1,32 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\SoyalWorkTimeTests.dll" total="1" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-06-05" time="17:13:20">
+<test-results name="C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\nunit.framework.dll" total="0" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-06-05" time="21:45:40">
   <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5420" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files\NUnit 2.6.3\bin" machine-name="WIN-DAV25S9GKU7" user="attila" user-domain="WIN-DAV25S9GKU7" />
   <culture-info current-culture="hu-HU" current-uiculture="hu-HU" />
-  <test-suite type="Assembly" name="C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\SoyalWorkTimeTests.dll" executed="True" result="Failure" success="False" time="11.261" asserts="0">
-    <results>
-      <test-suite type="Namespace" name="SoyalWorkTimeTests" executed="True" result="Failure" success="False" time="11.250" asserts="0">
-        <results>
-          <test-suite type="TestFixture" name="SoyalWorkTimeTest+Tests" executed="True" result="Failure" success="False" time="11.249" asserts="0">
-            <results>
-              <test-suite type="ParameterizedTest" name="LoginTest" executed="True" result="Failure" success="False" time="11.243" asserts="0">
-                <results>
-                  <test-case name="SoyalWorkTimeTests.SoyalWorkTimeTest+Tests.LoginTest()" executed="True" result="Failure" success="False" time="11.238" asserts="1">
-                    <failure>
-                      <message><![CDATA[  Title contains WorkTime Manager
-  Expected: True
-  But was:  False
-]]></message>
-                      <stack-trace><![CDATA[at SoyalWorkTimeTests.SoyalWorkTimeTest.Tests.LoginTest() in c:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\SeleniumTests\Tests\Tests.cs:line 25
-]]></stack-trace>
-                    </failure>
-                  </test-case>
-                </results>
-              </test-suite>
-            </results>
-          </test-suite>
-        </results>
-      </test-suite>
-    </results>
-  </test-suite>
+  <test-suite type="Assembly" name="C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\nunit.framework.dll" executed="True" result="Inconclusive" success="False" time="0.063" asserts="0" />
 </test-results>

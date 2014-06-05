@@ -42,6 +42,12 @@ namespace SoyalWorkTimeDatabaseSetup
             Console.WriteLine(executeCommand("sqllocaldb d " + Name));
             Console.WriteLine(executeCommand("sqllocaldb c " + Name));
             Console.WriteLine(executeCommand("sqllocaldb s " + Name));
+            
+            Console.WriteLine("Start sleep");
+            Console.WriteLine("-----");
+            Thread.Sleep(20000);
+            Console.WriteLine("Wake up, go away");
+
             string address = executeCommand("sqllocaldb i " + Name + " | findstr ^pipe").Substring(20);
             string importcommand = @"CREATE DATABASE [" + Name + @"] ON ( FILENAME = N'" + databasefile + ".mdf' ), ( FILENAME = N'" + databasefile + "_log.ldf' )  FOR ATTACH ;";
             Console.WriteLine(executeCommand("sqlcmd -S " + address + @" -i .\commandfile.sql"));
@@ -50,9 +56,7 @@ namespace SoyalWorkTimeDatabaseSetup
             Replaceinfile(xmlfile, "DefaultConnection", "OldConnection");
             Replaceinfile(xmlfile, "SecondConnection", "DefaultConnection");
             Console.WriteLine("xml changed");
-            Console.Write("Start sleep");
-            Thread.Sleep(20000);
-            Console.Write("Wake up, go away");
+            
         }
 
         private static void Replaceinfile(string file, string oldtext, string newtext)
@@ -64,7 +68,7 @@ namespace SoyalWorkTimeDatabaseSetup
 
         private static void DeSetup()
         {
-            Console.Write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> STOP DB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+          
             executeCommand("sqllocaldb p " + Name);
             executeCommand("sqllocaldb d " + Name);
         }
