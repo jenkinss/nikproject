@@ -50,6 +50,9 @@ namespace SoyalWorkTimeDatabaseSetup
             Replaceinfile(xmlfile, "DefaultConnection", "OldConnection");
             Replaceinfile(xmlfile, "SecondConnection", "DefaultConnection");
             Console.WriteLine("xml changed");
+            Console.Write("Start sleep");
+            Thread.Sleep(20000);
+            Console.Write("Wake up, go away");
         }
 
         private static void Replaceinfile(string file, string oldtext, string newtext)
@@ -61,6 +64,7 @@ namespace SoyalWorkTimeDatabaseSetup
 
         private static void DeSetup()
         {
+            Console.Write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> STOP DB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             executeCommand("sqllocaldb p " + Name);
             executeCommand("sqllocaldb d " + Name);
         }

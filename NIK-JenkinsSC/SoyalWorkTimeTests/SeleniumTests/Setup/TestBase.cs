@@ -21,8 +21,9 @@ namespace SoyalWorkTimeTests
         {
 
             //Webserver initialize
-            int portnumber = 80;
-            WebServerSetup.sitePath = Environment.GetEnvironmentVariable("soyalpublishfolder");
+            int portnumber = 5042;
+            WebServerSetup.sitePath = @"C:\jenkins\Test\Artifacts\SoyalWorkTimeWebManager\_PublishedWebsites\SoyalWorkTimeWebManager";
+                //Environment.GetEnvironmentVariable("soyalpublishfolder");
             WebServerSetup.portNumber = portnumber;
             WebServerSetup.StartIIS();
 

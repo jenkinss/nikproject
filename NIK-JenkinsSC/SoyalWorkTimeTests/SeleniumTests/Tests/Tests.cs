@@ -27,10 +27,9 @@ namespace SoyalWorkTimeTests
                 Assert.True(SeleniumDriver.driver.Url.Contains("Login"), "Url contains Login");
 
                 Loginpage page = new Loginpage();
+
                 page.usernamelement.Clear();
                 page.usernamelement.SendKeys("root");
-
-                Thread.Sleep(10000);
 
                 page.passwordelement.Clear();
                 page.passwordelement.SendKeys("123456");

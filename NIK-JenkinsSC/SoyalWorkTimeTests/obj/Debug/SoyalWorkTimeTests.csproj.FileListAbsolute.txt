@@ -17,6 +17,6 @@ C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver
 C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\nunit.framework.xml
 C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver.xml
 C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\bin\Debug\WebDriver.Support.xml
-C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.csprojResolveAssemblyReference.cache
 C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.dll
 C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.pdb
+C:\Git_workspace\nikproject\NIK-JenkinsSC\SoyalWorkTimeTests\obj\Debug\SoyalWorkTimeTests.csprojResolveAssemblyReference.cache
